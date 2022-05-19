@@ -58,8 +58,6 @@ async def answer(bot, query):
 
     if results:
         switch_pm_text = f"{emoji.CHECK_MARK} Tersedia"
-        if string:
-            switch_pm_text += f" for {string}"
 
         try:
             await query.answer(results=results,
@@ -77,8 +75,6 @@ async def answer(bot, query):
     else:
 
         switch_pm_text = f'{emoji.CROSS_MARK} Silahkan Request ditombol menu.'
-        if string:
-            switch_pm_text += f' for "{string}"'
 
         await query.answer(results=[],
                            is_personal = True,
