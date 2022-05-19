@@ -7,10 +7,10 @@ from utils import Media, get_file_details, get_size
 from pyrogram.errors import UserNotParticipant
 logger = logging.getLogger(__name__)
 
-@Client.on_message(filters.command("start"))
+@Client.on_message(filters.command("startss"))
 async def start(bot, cmd):
     usr_cmdall1 = cmd.text
-    if usr_cmdall1.startswith("/start subinps"):
+    if usr_cmdall1.startswith("/startss subinps"):
         if AUTH_CHANNEL:
             invite_link = await bot.create_chat_invite_link(int(AUTH_CHANNEL))
             try:
@@ -66,7 +66,7 @@ async def start(bot, cmd):
                     f_caption = f"{files.file_name}"
                 buttons = [
                     [
-                        InlineKeyboardButton('Search again', switch_inline_query_current_chat=''),
+                        InlineKeyboardButton('Cari Lagi', switch_inline_query_current_chat=''),
                         InlineKeyboardButton('More Bots', url='https://t.me/subin_works/122')
                     ]
                     ]
@@ -188,7 +188,7 @@ async def delete(bot, message):
         await msg.edit('File is successfully deleted from database')
     else:
         await msg.edit('File not found in database')
-@Client.on_message(filters.command('about'))
+@Client.on_message(filters.command('aboutss'))
 async def bot_info(bot, message):
     buttons = [
         [
